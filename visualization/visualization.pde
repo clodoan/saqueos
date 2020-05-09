@@ -6,7 +6,7 @@ color c = color(#ffffff);
 
 void setup() {
   size(1400, 1000);
-  String[] lines = loadStrings("https://raw.githubusercontent.com/clodoan/saqueos/master/data/results_clean.csv");
+  String[] lines = loadStrings("https://github.com/clodoan/saqueos/blob/master/data/results.csv");
   String entireTweets = join(lines," ");
   printArray(entireTweets);
   words = splitTokens(entireTweets, ", ");
