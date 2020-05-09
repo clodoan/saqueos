@@ -1,4 +1,5 @@
 String[] words;
+Table table;
 IntDict dictionary;
 int index = 0;
 color c = color(#ffffff);
@@ -6,9 +7,11 @@ color c = color(#ffffff);
 
 void setup() {
   size(1400, 1000);
+
   String[] lines = loadStrings("https://github.com/clodoan/saqueos/blob/master/data/results.csv");
   String entireTweets = join(lines," ");
   printArray(entireTweets);
+  
   words = splitTokens(entireTweets, ", ");
   dictionary = new IntDict();
   dictionary.set("saqueos",0);
@@ -25,11 +28,12 @@ void draw() {
   
   if ((words[index].toLowerCase() == "saqueo") || (words[index].toLowerCase() == "saqueo")) {
     c = color(#FB0B0B);
+    fill(c);
   } else {
     c = color(#FFFFFF);
+    fill(c);
   };
   
-  fill(c);
   text(words[index], width/2, height/2);
   dictionary.increment(words[index].toLowerCase());
   
